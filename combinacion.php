@@ -32,7 +32,9 @@
 
 <img class="logo" src="./xmenlogo.png" >
 <div class="datos">
-
+https://hazloexpress.com/todos-los-join-mysql-select-con-dos-o-mas-tablas/
+https://es.stackoverflow.com/questions/13556/enlazar-dos-tablas-en-mysql
+https://www.baulphp.com/unir-dos-tablas-y-buscar-con-php-mysql/
 <?php
 echo "<table style='border: solid 1px red;'>";
 echo "<tr><th>Id</th><th>Nombre</th><th>Nombre Real</th><th>Poderes</th><th>Primera Aparicion</th><th>Biografia</th></tr>";
