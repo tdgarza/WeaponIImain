@@ -32,10 +32,12 @@
 
 <img class="logo" src="./xmenlogo.png" >
 <div class="datos">
-https://hazloexpress.com/todos-los-join-mysql-select-con-dos-o-mas-tablas/
-https://es.stackoverflow.com/questions/13556/enlazar-dos-tablas-en-mysql
-https://www.baulphp.com/unir-dos-tablas-y-buscar-con-php-mysql/
+
 <?php
+
+/*https://hazloexpress.com/todos-los-join-mysql-select-con-dos-o-mas-tablas/
+https://es.stackoverflow.com/questions/13556/enlazar-dos-tablas-en-mysql
+https://www.baulphp.com/unir-dos-tablas-y-buscar-con-php-mysql/ */
 echo "<table style='border: solid 1px red;'>";
 echo "<tr><th>Id</th><th>Nombre</th><th>Nombre Real</th><th>Poderes</th><th>Primera Aparicion</th><th>Biografia</th></tr>";
 
@@ -65,11 +67,11 @@ $dbname = "escuela";
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $conn->prepare("SELECT * FROM notas_estudiantes_materias
-  INNER JOIN post_category
-  WHERE category.id=post_category.id
-  
-  ");
+  $stmt = $conn->prepare("SELECT estudiantes.nombre, notas_estudiantes_materias.puntaje FROM estudiantes
+  INNER JOIN notas_estudiantes_materias ON estudiantes.id=notas_estudiantes_materias.id_estudiante"
+
+
+  );
   $stmt->execute();
 
   // set the resulting array to associative
