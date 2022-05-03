@@ -66,3 +66,15 @@ CREATE TABLE notas_estudiantes_materias(
     foreign key (id_estudiante) references estudiantes(id) on delete cascade on update cascade,
     foreign key (id_materia) references materias(id) on delete cascade on update cascade
 );
+
+
+CREATE TABLE status(
+  id bigint unsigned not null primary key auto_increment,
+  nombre varchar(100) not null
+  );
+ CREATE TABLE personaje(
+   id bigint unsigned not null primary key auto_increment,
+   id_status bigint unsigned not null,
+   nombre varchar(50),
+   foreign key(id_status) references status(id) on delete cascade on update cascade
+   );

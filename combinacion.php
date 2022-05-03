@@ -62,16 +62,14 @@ class TableRows extends RecursiveIteratorIterator {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "escuela";
+$dbname = "avengers5";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $conn->prepare("SELECT estudiantes.nombre, notas_estudiantes_materias.puntaje FROM estudiantes
-  INNER JOIN notas_estudiantes_materias ON estudiantes.id=notas_estudiantes_materias.id_estudiante"
-
-
-  );
+  $stmt = $conn->prepare("SELECT aliade.aliade, personaje.nombre FROM aliade
+  INNER JOIN personaje ON aliade.id=personaje.id_aliade"
+);
   $stmt->execute();
 
   // set the resulting array to associative
