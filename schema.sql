@@ -78,3 +78,47 @@ CREATE TABLE status(
    nombre varchar(50),
    foreign key(id_status) references status(id) on delete cascade on update cascade
    );
+
+   CREATE TABLE status(
+  id bigint unsigned not null primary key auto_increment,
+  nombre varchar(100) not null
+  ) ENGINE=InnoDB;
+  CREATE TABLE color(
+  id bigint unsigned not null primary key auto_increment,
+  color varchar(100) not null
+  ) ENGINE=InnoDB;
+ CREATE TABLE personaje(
+   id bigint unsigned not null primary key auto_increment,
+   id_status bigint unsigned not null,
+   id_color bigint unsigned not null,
+   nombre varchar(50),
+   foreign key(id_status) references status(id) on delete cascade on update cascade,
+   foreign key(id_color) references color(id) on delete cascade on update cascade
+     ) ENGINE=InnoDB;
+
+CREATE database amigos;
+use amigos;
+     CREATE TABLE color(
+  id bigint unsigned not null primary key auto_increment,
+  color varchar(100) not null
+  ) ENGINE=InnoDB;
+  CREATE TABLE sexo(
+  id bigint unsigned not null primary key auto_increment,
+  sexo varchar(100) not null
+  ) ENGINE=InnoDB;
+    CREATE TABLE mascota(
+  id bigint unsigned not null primary key auto_increment,
+  mascota varchar(100) not null
+  ) ENGINE=InnoDB;
+ CREATE TABLE amigo(
+   id bigint unsigned not null primary key auto_increment,
+   id_color bigint unsigned not null,
+   id_sexo bigint unsigned not null,
+   id_mascota bigint unsigned not null,
+   nombre varchar(50),
+   estatura varchar(5),
+   hobby varchar(50),
+   foreign key(id_color) references color(id) on delete cascade on update cascade,
+   foreign key(id_mascota) references mascota(id) on delete cascade on update cascade,
+   foreign key(id_sexo) references sexo(id) on delete cascade on update cascade
+     ) ENGINE=InnoDB;
