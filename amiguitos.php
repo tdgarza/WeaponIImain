@@ -1,12 +1,12 @@
 <?php
     if(isset($_POST['submit']))
     {
-        $name = $_POST['nombre'];
-        $estatura = $_POST['estatuta'];
+        $nombre = $_POST['nombre'];
+        $estatura = $_POST['estatura'];
         $hobby = $_POST['hobby'];
-        $color=$_POST['id_color'];
-        $sexo=$_POST['id_sexo'];
-        $mascota=$_POST['id_mascota'];
+        $id_color=$_POST['id_color'];
+        $id_sexo=$_POST['id_sexo'];
+        $id_mascota=$_POST['id_mascota'];
         
         //database details. You have created these details in the third step. Use your own.
         $host = "localhost";
