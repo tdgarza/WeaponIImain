@@ -51,3 +51,28 @@ body{
     font-size: 20px;
     font-weight: bold;
 }
+
+body{
+    background-color: rgb(0, 0, 0);
+    color: white;
+   
+}
+div{
+    position: relative;
+
+}
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h1{
+    background: rgb(79, 242, 24);
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    mix-blend-mode: multiply;
+}

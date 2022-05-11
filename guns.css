@@ -1,7 +1,7 @@
 body{
     background-color: black;
     color: white;
-    font-family: 'MrRobot', sans-serif;
+    font-family: 'Underworld Odd', sans-serif;
 }
 div{
     position: relative;
@@ -17,8 +17,8 @@ video{
 }
 h1{
     background: rgb(0, 0, 0);
-    font-size: 350px;
+    font-size: 20px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 40;
     mix-blend-mode: multiply;
 }
