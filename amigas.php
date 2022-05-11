@@ -37,13 +37,16 @@ class TableRows extends RecursiveIteratorIterator {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "avengers5";
+$dbname = "amigos";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $conn->prepare("SELECT aliade.aliade, personaje.nombre FROM aliade
-  INNER JOIN personaje ON aliade.id=personaje.id_aliade"
+  $stmt = $conn->prepare("SELECT `amigo`.`nombre`, `amigo`.`estatura`, `amigo`.`hobby`, `color`.`color`, `mascota`.`mascota`, `sexo`.`sexo`
+  FROM `amigo` 
+      LEFT JOIN `color` ON `amigo`.`id_color` = `color`.`id` 
+      LEFT JOIN `mascota` ON `amigo`.`id_mascota` = `mascota`.`id` 
+      LEFT JOIN `sexo` ON `amigo`.`id_sexo` = `sexo`.`id`;"
 );
   $stmt->execute();
 
@@ -57,9 +60,6 @@ try {
 }
 $conn = null;
 echo "</table>";
-
-
-
 
 ?>
 </body>
